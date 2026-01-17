@@ -180,33 +180,33 @@ const style = computed(() => {
     </template>
 
     <template v-if="store.windowStyle === 'variant-6' && store.showWindow">
-      <!-- Outer gray border (full rectangle) -->
-      <div class="absolute -left-4 -top-4 -bottom-4 z-30 w-px bg-[#2a2a2a]" />
-      <div class="absolute -right-4 -top-4 -bottom-4 z-30 w-px bg-[#2a2a2a]" />
-      <div class="absolute -top-4 -left-4 -right-4 z-30 h-px bg-[#2a2a2a]" />
-      <div class="absolute -bottom-4 -left-4 -right-4 z-30 h-px bg-[#2a2a2a]" />
+      <!-- Outer pastel rainbow gradient border (full rectangle) -->
+      <div class="absolute -left-4 -top-4 -bottom-4 z-30 w-px opacity-15" style="background: linear-gradient(180deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
+      <div class="absolute -right-4 -top-4 -bottom-4 z-30 w-px opacity-15" style="background: linear-gradient(180deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
+      <div class="absolute -top-4 -left-4 -right-4 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
+      <div class="absolute -bottom-4 -left-4 -right-4 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
 
       <!-- Top-left: neon down+right, gray up+left -->
-      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; top: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; top: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; top: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; top: -16px" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; top: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; top: -16px" />
 
       <!-- Top-right: neon down+left, gray up+right -->
-      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; top: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; top: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; top: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; top: -16px" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; top: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; top: -16px" />
 
       <!-- Bottom-left: neon up+right, gray down+left -->
-      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; bottom: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; bottom: -16px" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; bottom: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; bottom: -16px" />
 
       <!-- Bottom-right: neon up+left, gray down+right -->
-      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; bottom: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; bottom: -16px" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; bottom: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; bottom: -16px" />
     </template>
