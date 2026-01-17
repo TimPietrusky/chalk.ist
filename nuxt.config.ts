@@ -2,6 +2,10 @@ import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/vite";
 
 export default defineNuxtConfig({
+  devServer: {
+    port: 3001,
+  },
+
   hub: {
     blob: true,
     bindings: {

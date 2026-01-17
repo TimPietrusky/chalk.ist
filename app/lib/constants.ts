@@ -55,6 +55,14 @@ export const WINDOW_STYLES: {
       reflection: false,
     },
   },
+  {
+    value: "variant-6",
+    label: "Minimal",
+    features: {
+      particles: false,
+      reflection: false,
+    },
+  },
 ];
 
 export const LIGHT_WINDOW_STYLES: {

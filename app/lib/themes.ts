@@ -233,6 +233,19 @@ export const chalkistDarkThemes = [
     operator: "hsla(0, 0%, 100%, .4)",
   }),
 
+  createTheme("AI SDK", {
+    foreground: "#abb2bf",
+    variable: "#e06c75", // Red/coral for variable names
+    comment: "#5c6370", // Gray
+    keyword: "#c678dd", // Purple/magenta
+    punctuation: "#abb2bf", // Light gray
+    string: "#98c379", // Green
+    number: "#d19a66", // Orange
+    regexp: "#98c379", // Green
+    function: "#61afef", // Blue
+    operator: "#56b6c2", // Cyan/teal
+  }),
+
   // createTheme("Orchid", {
   //   foreground: "hsla(320, 80%, 70%, 0.7)",
   //   variable: "hsla(320, 0%, 70%, .4)",

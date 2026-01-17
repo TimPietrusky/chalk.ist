@@ -109,6 +109,10 @@ const style = computed(() => {
         },
         "variant-4": {},
         "variant-5": {},
+        "variant-6": {
+          borderRadius: "0px",
+          backgroundColor: "#0a0a0a",
+        },
       }[props.store.windowStyle] || {},
     );
   }
@@ -173,6 +177,38 @@ const style = computed(() => {
       <div
         class="absolute -bottom-1 -right-1 z-40 size-2 border border-blue-700 bg-white"
       />
+    </template>
+
+    <template v-if="store.windowStyle === 'variant-6' && store.showWindow">
+      <!-- Outer gray border (full rectangle) -->
+      <div class="absolute -left-4 -top-4 -bottom-4 z-30 w-px bg-[#2a2a2a]" />
+      <div class="absolute -right-4 -top-4 -bottom-4 z-30 w-px bg-[#2a2a2a]" />
+      <div class="absolute -top-4 -left-4 -right-4 z-30 h-px bg-[#2a2a2a]" />
+      <div class="absolute -bottom-4 -left-4 -right-4 z-30 h-px bg-[#2a2a2a]" />
+
+      <!-- Top-left: neon down+right, gray up+left -->
+      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; top: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; top: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; top: -48px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; top: -16px" />
+
+      <!-- Top-right: neon down+left, gray up+right -->
+      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; top: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; top: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; top: -48px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; top: -16px" />
+
+      <!-- Bottom-left: neon up+right, gray down+left -->
+      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="left: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; bottom: -48px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; bottom: -16px" />
+
+      <!-- Bottom-right: neon up+left, gray down+right -->
+      <div class="absolute z-40 h-8 w-px bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-px w-8 bg-[#5ce1e6] shadow-[0_0_8px_rgba(92,225,230,0.5)]" style="right: -16px; bottom: -16px" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; bottom: -48px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; bottom: -16px" />
     </template>
     <slot />
   </div>
