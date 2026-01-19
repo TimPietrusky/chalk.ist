@@ -186,27 +186,27 @@ const style = computed(() => {
       <div class="absolute -top-4 -left-4 -right-4 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
       <div class="absolute -bottom-4 -left-4 -right-4 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
 
-      <!-- Top-left: neon down+right, gray up+left -->
-      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; top: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; top: -16px" />
+      <!-- Top-left: rainbow down+right, gray up+left -->
+      <div class="absolute z-40 h-8 w-px" style="left: -16px; top: -16px; background: linear-gradient(180deg, #cc8f95, #95cca1)" />
+      <div class="absolute z-40 h-px w-8" style="left: -16px; top: -16px; background: linear-gradient(90deg, #cc8f95, #95cca1)" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; top: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; top: -16px" />
 
-      <!-- Top-right: neon down+left, gray up+right -->
-      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; top: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; top: -16px" />
+      <!-- Top-right: rainbow down+left, gray up+right -->
+      <div class="absolute z-40 h-8 w-px" style="right: -16px; top: -16px; background: linear-gradient(180deg, #95b4cc, #b395cc)" />
+      <div class="absolute z-40 h-px w-8" style="right: -16px; top: -16px; background: linear-gradient(270deg, #95b4cc, #b395cc)" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; top: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; top: -16px" />
 
-      <!-- Bottom-left: neon up+right, gray down+left -->
-      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; bottom: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="left: -16px; bottom: -16px" />
+      <!-- Bottom-left: rainbow up+right, gray down+left -->
+      <div class="absolute z-40 h-8 w-px" style="left: -16px; bottom: -16px; background: linear-gradient(0deg, #cccc95, #95cca1)" />
+      <div class="absolute z-40 h-px w-8" style="left: -16px; bottom: -16px; background: linear-gradient(90deg, #cccc95, #95cca1)" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; bottom: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; bottom: -16px" />
 
-      <!-- Bottom-right: neon up+left, gray down+right -->
-      <div class="absolute z-40 h-8 w-px bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; bottom: -16px" />
-      <div class="absolute z-40 h-px w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.5)]" style="right: -16px; bottom: -16px" />
+      <!-- Bottom-right: rainbow up+left, gray down+right -->
+      <div class="absolute z-40 h-8 w-px" style="right: -16px; bottom: -16px; background: linear-gradient(0deg, #b395cc, #95b4cc)" />
+      <div class="absolute z-40 h-px w-8" style="right: -16px; bottom: -16px; background: linear-gradient(270deg, #b395cc, #95b4cc)" />
       <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; bottom: -48px" />
       <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; bottom: -16px" />
     </template>
