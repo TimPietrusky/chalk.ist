@@ -77,6 +77,8 @@ const style = computed(() => {
           `,
         },
         "variant-6": {
+          borderRadius: "0px",
+          backgroundColor: `rgba(255, 255, 255, ${props.store.windowBackgroundOpacity / 100})`,
           boxShadow: `
             hsla(212, 10%, 27%, .9) 0px 20px 30px -10px
           `,
@@ -181,34 +183,34 @@ const style = computed(() => {
 
     <template v-if="store.windowStyle === 'variant-6' && store.showWindow">
       <!-- Outer pastel rainbow gradient border (full rectangle) -->
-      <div class="absolute -left-4 -top-4 -bottom-4 z-30 w-px opacity-15" style="background: linear-gradient(180deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
-      <div class="absolute -right-4 -top-4 -bottom-4 z-30 w-px opacity-15" style="background: linear-gradient(180deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
-      <div class="absolute -top-4 -left-4 -right-4 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
-      <div class="absolute -bottom-4 -left-4 -right-4 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
+      <div class="absolute -left-8 -top-8 -bottom-8 z-30 w-px opacity-15" style="background: linear-gradient(180deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
+      <div class="absolute -right-8 -top-8 -bottom-8 z-30 w-px opacity-15" style="background: linear-gradient(180deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
+      <div class="absolute -top-8 -left-8 -right-8 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #e0baff)" />
+      <div class="absolute -bottom-8 -left-8 -right-8 z-30 h-px opacity-15" style="background: linear-gradient(90deg, #e0baff, #bae1ff, #baffc9, #ffffba, #ffdfba, #ffb3ba)" />
 
       <!-- Top-left: rainbow down+right, gray up+left -->
-      <div class="absolute z-40 h-8 w-px" style="left: -16px; top: -16px; background: linear-gradient(180deg, #cc8f95, #95cca1)" />
-      <div class="absolute z-40 h-px w-8" style="left: -16px; top: -16px; background: linear-gradient(90deg, #cc8f95, #95cca1)" />
-      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; top: -48px" />
-      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; top: -16px" />
+      <div class="absolute z-40 h-8 w-px" style="left: -32px; top: -32px; background: linear-gradient(180deg, #cc8f95, #95cca1)" />
+      <div class="absolute z-40 h-px w-8" style="left: -32px; top: -32px; background: linear-gradient(90deg, #cc8f95, #95cca1)" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -32px; top: -64px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -64px; top: -32px" />
 
       <!-- Top-right: rainbow down+left, gray up+right -->
-      <div class="absolute z-40 h-8 w-px" style="right: -16px; top: -16px; background: linear-gradient(180deg, #95b4cc, #b395cc)" />
-      <div class="absolute z-40 h-px w-8" style="right: -16px; top: -16px; background: linear-gradient(270deg, #95b4cc, #b395cc)" />
-      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; top: -48px" />
-      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; top: -16px" />
+      <div class="absolute z-40 h-8 w-px" style="right: -32px; top: -32px; background: linear-gradient(180deg, #95b4cc, #b395cc)" />
+      <div class="absolute z-40 h-px w-8" style="right: -32px; top: -32px; background: linear-gradient(270deg, #95b4cc, #b395cc)" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -32px; top: -64px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -64px; top: -32px" />
 
       <!-- Bottom-left: rainbow up+right, gray down+left -->
-      <div class="absolute z-40 h-8 w-px" style="left: -16px; bottom: -16px; background: linear-gradient(0deg, #cccc95, #95cca1)" />
-      <div class="absolute z-40 h-px w-8" style="left: -16px; bottom: -16px; background: linear-gradient(90deg, #cccc95, #95cca1)" />
-      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -16px; bottom: -48px" />
-      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -48px; bottom: -16px" />
+      <div class="absolute z-40 h-8 w-px" style="left: -32px; bottom: -32px; background: linear-gradient(0deg, #cccc95, #95cca1)" />
+      <div class="absolute z-40 h-px w-8" style="left: -32px; bottom: -32px; background: linear-gradient(90deg, #cccc95, #95cca1)" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="left: -32px; bottom: -64px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="left: -64px; bottom: -32px" />
 
       <!-- Bottom-right: rainbow up+left, gray down+right -->
-      <div class="absolute z-40 h-8 w-px" style="right: -16px; bottom: -16px; background: linear-gradient(0deg, #b395cc, #95b4cc)" />
-      <div class="absolute z-40 h-px w-8" style="right: -16px; bottom: -16px; background: linear-gradient(270deg, #b395cc, #95b4cc)" />
-      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -16px; bottom: -48px" />
-      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -48px; bottom: -16px" />
+      <div class="absolute z-40 h-8 w-px" style="right: -32px; bottom: -32px; background: linear-gradient(0deg, #b395cc, #95b4cc)" />
+      <div class="absolute z-40 h-px w-8" style="right: -32px; bottom: -32px; background: linear-gradient(270deg, #b395cc, #95b4cc)" />
+      <div class="absolute z-40 h-8 w-px bg-[#2a2a2a]" style="right: -32px; bottom: -64px" />
+      <div class="absolute z-40 h-px w-8 bg-[#2a2a2a]" style="right: -64px; bottom: -32px" />
     </template>
     <slot />
   </div>

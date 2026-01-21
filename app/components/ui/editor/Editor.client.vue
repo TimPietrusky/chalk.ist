@@ -29,9 +29,12 @@ function transformerLineNumbers(): ShikiTransformer {
   return {
     name: "line-number",
     line(line, index) {
+      const existingClasses = Array.isArray(line.properties?.class)
+        ? line.properties.class
+        : line.properties?.class ? [line.properties.class] : [];
       line.properties = {
         ...line.properties,
-        class: ["line"],
+        class: ["line", ...existingClasses],
         "data-line": `${index}`,
       };
       line.children.unshift({
@@ -47,6 +50,47 @@ function transformerLineNumbers(): ShikiTransformer {
           },
         ],
       });
+      return line;
+    },
+  };
+}
+
+function transformerCommentHighlight(): ShikiTransformer {
+  return {
+    name: "comment-highlight",
+    line(line) {
+      // Extract text content, skipping line-number spans
+      function extractText(node: any, skipLineNumber = false): string {
+        if (node.type === "text") return node.value || "";
+        // Skip line-number spans
+        if (node.type === "element" &&
+            node.properties?.class?.includes?.("line-number")) {
+          return "";
+        }
+        if (node.children && Array.isArray(node.children)) {
+          return node.children.map((c: any) => extractText(c, skipLineNumber)).join("");
+        }
+        return "";
+      }
+
+      const lineText = extractText(line, true).trim();
+
+      // Check if line is a comment (starts with comment syntax)
+      const isCommentLine = lineText.startsWith("//") ||
+                           lineText.startsWith("/*") ||
+                           lineText.startsWith("*") ||
+                           lineText.startsWith("#") ||
+                           lineText.endsWith("*/");
+
+      if (isCommentLine) {
+        const existingClasses = Array.isArray(line.properties?.class)
+          ? line.properties.class
+          : [line.properties?.class].filter(Boolean);
+        line.properties = {
+          ...line.properties,
+          class: [...existingClasses, "comment-line"],
+        };
+      }
       return line;
     },
   };
@@ -174,6 +218,7 @@ const shikiContent = computed(() => {
     transformers: [
       transformerNotationDiff(),
       transformerNotationFocus(),
+      transformerCommentHighlight(),
       transformerLineNumbers(),
       transformerAnnotations(props.block.transformations),
       transformerCompactLineOptions(lineOptions),
@@ -485,6 +530,7 @@ const innerPaddingX = computed(() => `${store.value.innerPaddingX}px`);
   font-feature-settings: inherit;
   font-variation-settings: inherit;
   background-color: transparent !important;
+  border-radius: 0 !important;
 }
 
 .formatted code {
@@ -614,5 +660,21 @@ const innerPaddingX = computed(() => `${store.value.innerPaddingX}px`);
   position: relative;
   z-index: 100;
   margin-right: 20px;
+}
+
+/* Comment line highlighting - uses pseudo-element to avoid layout shifts */
+.formatted .line.comment-line {
+  position: relative;
+  isolation: isolate;
+}
+
+.formatted .line.comment-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: -1;
 }
 </style>

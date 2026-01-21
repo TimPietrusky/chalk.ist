@@ -13,8 +13,11 @@ export async function downloadPNG() {
   window.umami?.track("Download PNG");
   state.exportState = ExportState.PreparingToDownload;
   await nextTick();
+  // Calculate scale to ensure 4K output (minimum 3840px width)
+  const minWidth = 3840;
+  const scale = Math.max(4, Math.ceil(minWidth / frame.offsetWidth));
   const blob = await domToBlob(frame, {
-    scale: 4,
+    scale,
     width: frame.offsetWidth,
     height: frame.offsetHeight,
   });

@@ -246,6 +246,20 @@ export const chalkistDarkThemes = [
     operator: "#56b6c2", // Cyan/teal
   }),
 
+  createTheme("cool-turbo", {
+    foreground: "#e8e8e8",
+    variable: "#ff4d6d", // Vibrant neon pink
+    comment: "#ffffff", // Pure white for readability
+    commentBackground: "#4a1942", // Dark neon pink/magenta background
+    keyword: "#bf00ff", // Vivid purple
+    punctuation: "#b8b8b8", // Light gray
+    string: "#39ff14", // Neon green
+    number: "#ffff00", // Bright yellow
+    regexp: "#39ff14", // Neon green
+    function: "#00bfff", // Cyan blue
+    operator: "#ff8c00", // Neon orange
+  }),
+
   // createTheme("Orchid", {
   //   foreground: "hsla(320, 80%, 70%, 0.7)",
   //   variable: "hsla(320, 0%, 70%, .4)",

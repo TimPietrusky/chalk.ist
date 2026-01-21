@@ -63,6 +63,7 @@ type Colors = {
   diffChangedBg?: string;
   diffIgnoredBg?: string;
   carriageReturn?: string;
+  commentBackground?: string;
 };
 
 export function createTheme(name: string, colors: Colors) {
@@ -100,6 +101,7 @@ export function createTheme(name: string, colors: Colors) {
         scope: ["comment", "punctuation.definition.comment", "string.comment"],
         settings: {
           foreground: colors.comment,
+          ...(colors.commentBackground && { background: colors.commentBackground }),
         },
       },
       {

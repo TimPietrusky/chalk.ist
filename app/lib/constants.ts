@@ -59,6 +59,7 @@ export const WINDOW_STYLES: {
     value: "variant-6",
     label: "Minimal",
     features: {
+      appStyle: false,
       particles: false,
       reflection: false,
     },
@@ -81,7 +82,15 @@ export const LIGHT_WINDOW_STYLES: {
   { value: "variant-3", label: "Variant 3" },
   { value: "variant-4", label: "Variant 4" },
   { value: "variant-5", label: "Variant 5" },
-  { value: "variant-6", label: "Variant 6" },
+  {
+    value: "variant-6",
+    label: "Minimal",
+    features: {
+      appStyle: false,
+      particles: false,
+      reflection: false,
+    },
+  },
 ];
 
 export const SHADOW_OVERLAY_STYLES = [
