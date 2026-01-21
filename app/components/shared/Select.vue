@@ -153,6 +153,34 @@ function handleSelect(option: Option) {
 }
 
 function handleKeyDown(e: KeyboardEvent) {
+  // Handle arrow keys for previewOnFocus mode - navigate without opening dropdown
+  if (props.previewOnFocus && ["ArrowDown", "ArrowUp"].includes(e.code)) {
+    e.preventDefault();
+
+    // Find current selection index in flat options
+    const currentIndex = flatOptions.value.findIndex(
+      (opt) => opt.value === props.modelValue
+    );
+
+    let newIndex: number;
+    if (e.code === "ArrowDown") {
+      newIndex = currentIndex + 1 < flatOptions.value.length ? currentIndex + 1 : 0;
+    } else {
+      newIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : flatOptions.value.length - 1;
+    }
+
+    const newOption = flatOptions.value[newIndex];
+    if (newOption) {
+      emit("update:modelValue", newOption.value);
+    }
+
+    // Keep dropdown closed
+    if (isOpen.value) {
+      close();
+    }
+    return;
+  }
+
   if (
     !isOpen.value &&
     !["Enter", "ArrowDown", "ArrowUp", "Space"].includes(e.code)

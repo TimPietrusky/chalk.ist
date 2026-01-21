@@ -56,6 +56,7 @@ const setEditorLanguage = (language: BundledLanguage) => {
     <Select
       class="w-32"
       use-opaque-background
+      preview-on-focus
       :model-value="block.language"
       @update:model-value="setEditorLanguage"
       :options="LANGUAGES"
